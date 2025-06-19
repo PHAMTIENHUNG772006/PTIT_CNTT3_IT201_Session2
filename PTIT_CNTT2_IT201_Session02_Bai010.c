@@ -1,8 +1,7 @@
+
 #include <stdio.h>
 #include <stdlib.h>
     int main() {
-        int temp;
-        int maxCount = 0;
         int size;
         printf("Nhap so phan tu cua mang: ");
         scanf("%d", &size);
@@ -14,19 +13,22 @@
         for (int i = 0; i < size; i++) {
             scanf("%d", &arr[i]);
         }
+        int visited[100] = {0};
+
         for (int i = 0; i < size; i++) {
-            int count = 0;
-            for (int j = 0; j < size; j++) {
+            if (visited[i] == 1) continue;
+
+            int count = 1;
+            for (int j = i + 1; j < size; j++) {
                 if (arr[i] == arr[j]) {
                     count++;
+                    visited[j] = 1;
                 }
             }
-            if(count > maxCount) {
-                maxCount = count;
-                temp = arr[i];
-                printf(" phan tu xuat hien nhieu nhat la : %d", temp);
-            }
+
+            printf("Phan tu %d xuat hien %d lan\n", arr[i], count);
         }
         free(arr);
         return 0;
     }
+

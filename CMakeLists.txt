@@ -13,4 +13,5 @@ add_executable(Session2
         PTIT_CNTT2_IT201_Session02_Bai07.c
         PTIT_CNTT2_IT201_Session02_Bai08.c
         PTIT_CNTT2_IT201_Session02_Bai09.c
+        PTIT_CNTT2_IT201_Session02_Bai010.c
 )
